@@ -1,0 +1,9 @@
+# Lefthook configuration
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  commands:
+    lint:
+      glob: "*.{js,jsx,ts,tsx,json,css}"
+      run: bunx biome check --write {staged_files}
+      stage_fixed: true

@@ -1,0 +1,40 @@
+{
+  "name": "prisma-select",
+  "version": "1.0.0-beta.1",
+  "type": "module",
+  "bin": {
+    "prisma-select": "./bin/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./generator": {
+      "import": "./dist/generator/index.js"
+    }
+  },
+  "peerDependencies": {
+    "graphql": ">=15"
+  },
+  "dependencies": {
+    "graphql-parse-resolve-info": "^4.13.0",
+    "@prisma/generator-helper": ">=6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.1.14",
+    "lefthook": "^1.8.4",
+    "typescript": "^5.7.0",
+    "graphql": "^16.0.0"
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir dist --target node && bun build ./src/generator/index.ts --outdir dist/generator --target node && tsc --emitDeclarationOnly",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "test": "bun test",
+    "prepare": "lefthook install"
+  }
+}
