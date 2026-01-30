@@ -37,7 +37,7 @@ export function writeSchema(outputDir: string, models: DatamodelModel[]): void {
     modelEntry += '\n  }';
     schemaEntries.push(modelEntry);
 
-    const fieldTypes = fieldKeys.map((k) => `${k}: true`).join('; ');
+    const fieldTypes = [...fieldKeys.map((k) => `${k}: true`), '_count: true'].join('; ');
     modelsObjectEntries.push(`  ${model.name}: { ${fieldTypes} }`);
   }
 

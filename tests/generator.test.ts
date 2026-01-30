@@ -43,6 +43,7 @@ describe('writeSchema', () => {
     expect(schemaContent).toContain("export type ModelName = 'User' | 'Post'");
     expect(schemaContent).toContain('export interface ModelsObject');
     expect(schemaContent).toContain('@PrismaSelect.map([BlogPost])');
+    expect(schemaContent).toContain('_count: true');
 
     const indexContent = readFileSync(resolve(tmpDir, 'index.ts'), 'utf-8');
     expect(indexContent).toContain("export { schema } from './schema.js'");

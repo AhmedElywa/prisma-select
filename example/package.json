@@ -1,0 +1,22 @@
+{
+  "name": "prisma-select-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run src/server.ts",
+    "seed": "bun run prisma/seed.ts",
+    "generate": "bunx prisma generate"
+  },
+  "dependencies": {
+    "graphql": "^16.10.0",
+    "graphql-yoga": "^5.10.6",
+    "@pothos/core": "^4.3.0",
+    "@prisma/client": "^6.2.0",
+    "prisma-select": "file:.."
+  },
+  "devDependencies": {
+    "prisma": "^6.2.0",
+    "typescript": "^5.7.0",
+    "@types/bun": "^1.1.14"
+  }
+}
