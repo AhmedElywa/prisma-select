@@ -8,7 +8,7 @@ generator client {
 }
 
 generator select {
-  provider = "prisma-select"
+  provider = "node ../bin/cli.js"
   output   = "./generated/prisma-select"
 }
 

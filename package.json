@@ -31,7 +31,7 @@
     "graphql": "^16.0.0"
   },
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir dist --target node && bun build ./src/generator/index.ts --outdir dist/generator --target node && tsc --emitDeclarationOnly",
+    "build": "bun build ./src/index.ts --outdir dist --target node --external graphql --external graphql-parse-resolve-info && bun build ./src/generator/index.ts --outdir dist/generator --target node && tsc --emitDeclarationOnly",
     "check": "biome check .",
     "check:fix": "biome check --write .",
     "test": "bun test",

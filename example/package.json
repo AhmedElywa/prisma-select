@@ -5,14 +5,13 @@
   "scripts": {
     "dev": "bun run src/server.ts",
     "seed": "bun run prisma/seed.ts",
-    "generate": "bunx prisma generate"
+    "generate": "bunx prisma generate",
+    "postinstall": "rm -rf node_modules/graphql node_modules/graphql-parse-resolve-info"
   },
   "dependencies": {
-    "graphql": "^16.10.0",
     "graphql-yoga": "^5.10.6",
     "@pothos/core": "^4.3.0",
-    "@prisma/client": "^6.2.0",
-    "prisma-select": "file:.."
+    "@prisma/client": "^6.2.0"
   },
   "devDependencies": {
     "prisma": "^6.2.0",

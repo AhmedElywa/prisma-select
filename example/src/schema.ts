@@ -1,7 +1,7 @@
 import SchemaBuilder from '@pothos/core';
 import type { PrismaClient } from '@prisma/client';
 import type { GraphQLResolveInfo } from 'graphql';
-import { PrismaSelect } from 'prisma-select';
+import { PrismaSelect } from '../../src/index.js';
 import { schema as prismaSelectSchema } from '../prisma/generated/prisma-select/index.js';
 
 interface Context {
