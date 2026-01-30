@@ -12,9 +12,9 @@ describe('E2E: prisma generate', () => {
     rmSync(generatedDir, { recursive: true, force: true });
     // Build the generator first
     execSync('bun run build', { cwd: projectRoot, stdio: 'pipe' });
-    // Run prisma generate
-    execSync('bunx prisma generate', { cwd: e2eDir, stdio: 'pipe' });
-  });
+    // Run prisma generate (longer timeout for CI where prisma may need downloading)
+    execSync('bunx prisma generate', { cwd: e2eDir, stdio: 'pipe', timeout: 60_000 });
+  }, 120_000);
 
   it('creates schema.ts', () => {
     expect(existsSync(resolve(generatedDir, 'schema.ts'))).toBe(true);
